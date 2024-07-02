@@ -5,4 +5,5 @@ import pickle
 
 class PredictorConfig(AppConfig):
     # create path to models
-    pass
+    # pass
+    name = 'predictor'
