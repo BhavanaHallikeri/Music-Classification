@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove Guru - Genre Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .result-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .genre-result {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Genre Classification Result</h2>
+        <div class="genre-result">
+            Predicted Genre: <strong id="genre-placeholder">Loading...</strong>
+        </div>
+        <a href="genre_classification.html" class="back-button">Classify Another Song</a>
+    </div>
+
+    <script>
+        // In a real application, you would fetch the result from the server
+        // For this example, we'll just simulate a random genre
+        const genres = ['Rock', 'Pop', 'Hip Hop', 'Jazz', 'Classical', 'Electronic'];
+        const randomGenre = genres[Math.floor(Math.random() * genres.length)];
+        document.getElementById('genre-placeholder').textContent = randomGenre;
+    </script>
+</body>
+</html>
