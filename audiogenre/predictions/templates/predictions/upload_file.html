@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Genre Prediction</title>
+    {% comment %} #<link rel="stylesheet" href="{% static 'styles.css' %}"> {% endcomment %}
+</head>
+<body>
+    <h1>Upload an Audio File for Genre Prediction</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if knn_prediction %}
+    <h2>Predictions</h2>
+    <p><strong>KNN Prediction:</strong> {{ knn_prediction }}</p>
+    <p><strong>SVM Prediction:</strong> {{ svm_prediction }}</p>
+    <audio controls>
+        <source src="{{ file_url }}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+</body>
+</html>
