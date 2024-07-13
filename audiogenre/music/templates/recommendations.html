@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Recommendations</title>
+</head>
+<body>
+    <h1>Music Recommendations</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for heading in headings %}
+                <th>{{ heading }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for cell in row.values %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

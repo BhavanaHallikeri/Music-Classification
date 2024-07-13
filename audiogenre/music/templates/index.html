@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Your Mood</title>
+</head>
+<body>
+    <h1>Select Your Mood</h1>
+    <form method="post" action="{% url 'select_mood' %}">
+        {% csrf_token %}
+        <select name="mood">
+            {% for key, value in emotions.items %}
+            <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
